@@ -49,67 +49,83 @@ namespace ConsoleApp2
 
             //-------------- 2 ------------------------------------------------------------------------
             {
-                Console.WriteLine("Введите строку состояющую из 5 букв или цифр");
-                var Lines = new List<string>();
-               ()
 
+
+                Regex rg = new Regex( @"^(\w{5}|\d{5})"); // ровно 5 букв или цифр в любом порядке
+                
+                
+                    Console.Write("Введите строку состоящую из букв и цифр :\r\n    ");
+                    var str = Console.ReadLine();
+
+                    if (rg.IsMatch(str)) //  rg. проверяет на соответствие шаблону 
+
+                    {
+                        Console.WriteLine(str);
+                    }
+                    else
+                    {
+                        Console.Write("Ошибка ввода");
+                        
+                    }
+                
             }
 
-                //-------------- 1 ----------------------------------------------------------------------
+            //-------------- 1 ----------------------------------------------------------------------
 
-                //{
-                //    var Lines = File.ReadAllLines("Text.txt");
-                //    var Words = new List<String>();
-                //    //    Regex rg = new Regex(@"(^(aaaaaa)+\b|^(a aa a)+\b)|(\b[a]\b)");
-                //    Regex rg = new Regex(@"^(aaaaaa)$|^(a aa a)$|^(а)$");
-                //    foreach (var Line in Lines)
-                //    {
-                //        var String = rg.Match(Line);
-                //        Words.Add(String.Groups[1].ToString());
-                //        Console.WriteLine(String);
-                //    }
+            //{
+            //    var Lines = File.ReadAllLines("Text.txt");
+            //    var Words = new List<String>();
+            //    //    Regex rg = new Regex(@"(^(aaaaaa)+\b|^(a aa a)+\b)|(\b[a]\b)");
+            //    Regex rg = new Regex(@"^(aaaaaa)$|^(a aa a)$|^(а)$");
+            //    foreach (var Line in Lines)
+            //    {
+            //        var String = rg.Match(Line);
+            //        Words.Add(String.Groups[1].ToString());
+            //        Console.WriteLine(String);
+            //    }
 
-                //}
-                //-------------- 4 ----------------------------------------------------------------------
-
-
-                //var Lines = File.ReadAllLines("City.txt");
-                //var Words = new List<String>();
-                ////Regex rg = new Regex(@"((^[(А-я)]\w+))[\S]((:)|([(А-я)]\w+))[\S](([(А-я)]\w+)|(:))([\S]|[^:])(\s)(\b(широт[а-я])|\b\d+)([,]|\s+|\d+)(\b\d+|[,]|[.]|\s)(\b(долгот[а-я])|[,]|[.]|\s)(\b(долгот[а-я])|\b\d+|\b\d+[.]\d+|[,]|[.]|\s)([,]|[.]|\s)");   (\d{1,3}.{1}\d{1,4})
-                ////Regex rg = new Regex(@"((^[(А-я)]\w+))[\S]((:)|([(А-я)]\w+))[\S](([(А-я)]\w+)|(:))([\S]|[^:])(\s)(\b(широт[а-я])|\b\d+)([,]|\s+|\d+)");
-                //Regex rg = new Regex(@"((г\. )?[А-Я][а-я]{2,})((:)|([-\.])?)([А-Яа-я]{2,})?([-\.])?([А-Яа-я]{2,})?(:)?(\s)(\b(широта)?)(\s|[\d]{1,2})(([\d]{1,2})([.,])([\d]{0,4}))([,]?)(\s)(\b(долгота)?)(\s)?([\d]{1,3})?(([.])[\d]{0,4})|([.]?)")
-                //{
-
-                //};
-                //foreach (var Line in Lines)
-                //{
-                //    var String = rg.Match(Line);
-                //    Words.Add(String.ToString());
-                //    Console.WriteLine(String);
-                //}
-                //Console.WriteLine("Остальные города не найдены");
+            //}
+            //-------------- 4 ----------------------------------------------------------------------
 
 
+            //var Lines = File.ReadAllLines("City.txt");
+            //var Words = new List<String>();
+            ////Regex rg = new Regex(@"((^[(А-я)]\w+))[\S]((:)|([(А-я)]\w+))[\S](([(А-я)]\w+)|(:))([\S]|[^:])(\s)(\b(широт[а-я])|\b\d+)([,]|\s+|\d+)(\b\d+|[,]|[.]|\s)(\b(долгот[а-я])|[,]|[.]|\s)(\b(долгот[а-я])|\b\d+|\b\d+[.]\d+|[,]|[.]|\s)([,]|[.]|\s)");   (\d{1,3}.{1}\d{1,4})
+            ////Regex rg = new Regex(@"((^[(А-я)]\w+))[\S]((:)|([(А-я)]\w+))[\S](([(А-я)]\w+)|(:))([\S]|[^:])(\s)(\b(широт[а-я])|\b\d+)([,]|\s+|\d+)");
+            //Regex rg = new Regex(@"((г\. )?[А-Я][а-я]{2,})((:)|([-\.])?)([А-Яа-я]{2,})?([-\.])?([А-Яа-я]{2,})?(:)?(\s)(\b(широта)?)(\s|[\d]{1,2})(([\d]{1,2})([.,])([\d]{0,4}))([,]?)(\s)(\b(долгота)?)(\s)?([\d]{1,3})?(([.])[\d]{0,4})|([.]?)")
+            //{
 
-                //-------------- 5 ----------------------------------------------------------------------
+            //};
+            //foreach (var Line in Lines)
+            //{
+            //    var String = rg.Match(Line);
+            //    Words.Add(String.ToString());
+            //    Console.WriteLine(String);
+            //}
+            //Console.WriteLine("Остальные города не найдены");
 
 
-                //var Lines = File.ReadAllLines("testData.xml");
-                //var Words = new List<String>();
 
-                ////Regex rg = new Regex(@"((г\. )?[А-Я][а-я]{2,})((:)|([-\.])?)([А-Яа-я]{2,})?([-\.])?([А-Яа-я]{2,})?(:)?(\s)(\b(широта)?)(\s|[\d]{1,2})(([\d]{1,2})([.,])([\d]{0,4}))([,]?)(\s)(\b(долгота)?)(\s)?([\d]{1,3})?(([.])[\d]{0,4})|([.]?)");
-                //var regex = new Regex(@"[\d]+|[\w]+|[\s]+");
+            //-------------- 5 ----------------------------------------------------------------------
 
 
-                //foreach (var Line in Lines)
-                //{
-                //    var String = regex.Match(Line);
-                //    Words.Add(String.ToString());
-                //    Console.WriteLine(Regex.Replace(String.ToString(), @"^(\d{1,2}.|[\d{1,2}.])", ""));
-                //}
-                //Console.WriteLine("Остальные города не найдены");
+            var Lines = File.ReadAllLines("testData.xml");
+            var Words = new List<String>();
 
+            //1 a.	найдите все значения, попадающие под ваш вариант задания из пункта 4; 
+            //Regex rg = new Regex(@"((г\. )?[А-Я][а-я]{2,})((:)|([-\.])?)([А-Яа-я]{2,})?([-\.])?([А-Яа-я]{2,})?(:)?(\s)(\b(широта)?)(\s|[\d]{1,2})(([\d]{1,2})([.,])([\d]{0,4}))([,]?)(\s)(\b(долгота)?)(\s)?([\d]{1,3})?(([.])[\d]{0,4})|([.]?)");
+            var regex = new Regex(@"[\d]+|[\w]+|[\s]+");
+
+
+            foreach (var Line in Lines)
+            {
+                var String = regex.Match(Line);
+                Words.Add(String.ToString());
+                Console.WriteLine(Regex.Replace(String.ToString(), @"^(\d{1,2}.|[\d{1,2}.])", ""));
             }
+            Console.WriteLine("Остальные города не найдены");
+
+        }
     }
 }
 
